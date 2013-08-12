@@ -118,8 +118,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 
 Vagrant.configure("2") do |config|
-  config.vm.hostname = 'puppet'
+  config.vm.hostname = 'example'
   config.vm.provision :shell, :path => "scripts/bootstrapStartupScript.sh"
+  config.vm.provision "chef_solo" do |chef|
+	chef.add_recipe "ntp"
+  end
   #config.vm.provision :puppet do |puppet|
   #  puppet.options = "--verbose --debug"
   #end

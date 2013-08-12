@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo $(date) > /vagrant/scripts/$(hostname).startupdate
+echo $(date) >> /vagrant/scripts/$(hostname).startupdate
